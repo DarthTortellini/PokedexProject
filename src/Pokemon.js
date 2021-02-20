@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Typography, Link, CircularProgress, Button } from "@material-ui/core";
 
 import axios from "axios";
-import generatePokemonJSX from "./components/generatePokemon"
+import generatePokemonJSX from "./components/GeneratePokemon"
 
 const Pokemon = (props) => {
   const { match, history } = props;

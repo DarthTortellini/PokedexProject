@@ -2,9 +2,9 @@ import { Typography, Link, } from "@material-ui/core";
 import { toFirstCharUppercase } from "../constants";
 
 const generatePokemonJSX = (pokemon) => {
-    const { name, id, species, height, weight, types, sprites } = pokemon;
+    const { name, id, species, height, weight, types, } = pokemon;
     const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-    const { front_default } = sprites;
+    const {front_default}=fullImageUrl
     return (
       <>
         <Typography variant="h1">
@@ -19,6 +19,7 @@ const generatePokemonJSX = (pokemon) => {
         </Typography>
         <Typography>Height: {height} </Typography>
         <Typography>Weight: {weight} </Typography>
+        
         <Typography variant="h6"> Types:</Typography>
         {types.map((typeInfo) => {
           const { type } = typeInfo;
