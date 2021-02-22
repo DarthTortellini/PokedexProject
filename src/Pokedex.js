@@ -10,31 +10,58 @@ import {
     Toolbar,
     AppBar,
     TextField,
+    BottomNavigation,
 } from "@material-ui/core";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import { toFirstCharUppercase } from "./constants";
 import SearchIcon from "@material-ui/icons/Search";
 import axios from "axios";
+import { Gradient } from "@material-ui/icons";
+import { red } from "@material-ui/core/colors";
+import { createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: '#757ce8',
+            main: '#3f50b5',
+            dark: '#002884',
+            contrastText: '#fff',
+        },
+        secondary: {
+            light: '#ff7961',
+            main: '#f44336',
+            dark: '#ba000d',
+            contrastText: '#000',
+        },
+    },
+});
 
 const useStyles = makeStyles((theme) => ({
     pokedexContainer: {
         paddingTop: "20px",
         paddingLeft: "50px",
         paddingRight: "50px",
+        backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
     },
     cardMedia: {
         margin: "auto",
+        backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
+
     },
     cardContent: {
         textAlign: "center",
+
     },
     searchContainer: {
         display: "flex",
+        justifyContent: "center",
         backgroundColor: fade(theme.palette.common.white, 0.15),
         paddingLeft: "20px",
         paddingRight: "20px",
         marginTop: "5px",
-        marginBottom: "5px",
+        marginBottom: "15px",
+
     },
     searchIcon: {
         alignSelf: "flex-end",
@@ -44,6 +71,14 @@ const useStyles = makeStyles((theme) => ({
         width: "200px",
         margin: "5px",
     },
+    Toolbar: {
+        display: "flex",
+        justifyContent: "space-evenly",
+        borderBottom: "10px, black",
+
+
+    },
+
 }));
 
 const Pokedex = (props) => {
@@ -161,40 +196,52 @@ const Pokedex = (props) => {
     return (
         <>
             <AppBar position="static">
-                <Toolbar>
-                    <div className={classes.searchContainer}>
-                        <SearchIcon className={classes.searchIcon} />
-                        <TextField
-                            className={classes.searchInput}
-                            onChange={handleSearchChange}
-                            label="Pokemon"
-                            variant="standard"
-                            id="pokeName"
-                        />
-                    </div>
-                    <div className={classes.searchContainer}>
-                        <SearchIcon className={classes.searchIcon} />
-                        <TextField
-                            className={classes.searchInput}
-                            onChange={handleSearchChange}
-                            label="Type"
-                            variant="standard"
-                            id="pokeType"
-                        />
-                    </div>
-                    <div className={classes.searchContainer}>
-                        <SearchIcon className={classes.searchIcon} />
-                        <TextField
-                            className={classes.searchInput}
-                            onChange={handleSearchChange}
-                            label="Weaknesses"
-                            variant="standard"
-                            id="pokeWeaknesses"
-                        />
-                    </div>
+                <div className={classes.Toolbar}>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
 
-                </Toolbar>
+                    <Toolbar className={classes.Toolbar}>
+                        <div className={classes.searchContainer}>
+                            <SearchIcon className={classes.searchIcon} />
+                            <TextField
+                                className={classes.searchInput}
+                                onChange={handleSearchChange}
+                                label="Pokemon"
+                                variant="standard"
+                                id="pokeName"
+                            />
+                        </div>
+                        <div className={classes.searchContainer}>
+                            <SearchIcon className={classes.searchIcon} />
+                            <TextField
+                                className={classes.searchInput}
+                                onChange={handleSearchChange}
+                                label="Type"
+                                variant="standard"
+                                id="pokeType"
+                            />
+                        </div>
+                        <div className={classes.searchContainer}>
+                            <SearchIcon className={classes.searchIcon} />
+                            <TextField
+                                className={classes.searchInput}
+                                onChange={handleSearchChange}
+                                label="Weaknesses"
+                                variant="standard"
+                                id="pokeWeaknesses"
+                            />
 
+                        </div>
+
+                    </Toolbar>
+
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+
+                </div>
+<hr/>
             </AppBar>
 
             {pokemonData ? (

@@ -21,9 +21,9 @@ const Pokemon = (props) => {
         setPokemon(false);
       });
   }, [pokemonId]);
-console.log("pokemon renders")
-console.log(pokemon)
-  
+  console.log("pokemon renders")
+  console.log(pokemon)
+
   return (
     <>
       {pokemon === undefined && <CircularProgress />}
