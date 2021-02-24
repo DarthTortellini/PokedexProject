@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import {
     Grid,
     Card,
@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent: {
         textAlign: "center",
+        
 
     },
     searchContainer: {
@@ -59,8 +60,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: fade(theme.palette.common.white, 0.15),
         paddingLeft: "20px",
         paddingRight: "20px",
-        marginTop: "5px",
-        marginBottom: "15px",
+        marginTop: "10px",
+        marginBottom: "0px",
+        
 
     },
     searchIcon: {
@@ -83,12 +85,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Pokedex = (props) => {
     const classes = useStyles();
-    const { history } = props;
+    const  history  = useHistory();
     const [pokemonData, setPokemonData] = useState([]);
     const [filterList, setFilterList] = useState([]);
 
 
     useEffect(() => {
+        console.log("bepis")
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((response) => response.json())
             .then((result) => {
@@ -167,8 +170,9 @@ const Pokedex = (props) => {
 
     const getPokemonCard = (pokemonId) => {
         const { id, name, img, weight, height, weaknesses, type } = pokemonId;
+        
         return (
-            <Grid item xs={4} key={pokemonId}>
+            <Grid item xs={4} key={id}>
                 <Card onClick={() => history.push(`/${id}`)}>
                     <CardMedia
                         className={classes.cardMedia}
@@ -197,10 +201,11 @@ const Pokedex = (props) => {
         <>
             <AppBar position="static">
                 <div className={classes.Toolbar}>
+                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px" ></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-
+                    <img src="https://th.bing.com/th/id/R92376cd31daa2b778d0c8c972f4ff15e?rik=UGxgQCA6trucPw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fPikachu-Transparent-Background.png&ehk=IkODZDFKK69kkQUJ%2bHeTffq3HSV9Tw5xMlQ2skmbaek%3d&risl=&pid=ImgRaw" height="75px" width="75px"></img>
+                   
                     <Toolbar className={classes.Toolbar}>
                         <div className={classes.searchContainer}>
                             <SearchIcon className={classes.searchIcon} />
@@ -235,7 +240,7 @@ const Pokedex = (props) => {
                         </div>
 
                     </Toolbar>
-
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f484215b-4e9a-42b5-9feb-77c3dec3a385/dala92b-9ecf2fc6-d8aa-4c90-b728-ef6509eebd90.png" height="75px" width="75px"></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>

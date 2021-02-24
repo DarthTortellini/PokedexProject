@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Link, CircularProgress, Button } from "@material-ui/core";
-
+import {useParams, useHistory} from "react-router-dom"
 import axios from "axios";
 import generatePokemonJSX from "./components/GeneratePokemon"
 
 const Pokemon = (props) => {
-  const { match, history } = props;
-  const { params } = match;
-  const { pokemonId } = params;
+const history= useHistory()
+
+  const { pokemonId } = useParams();
   const [pokemon, setPokemon] = useState(undefined);
 
   useEffect(() => {
+    
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`)
       .then(function (response) {
         const { data } = response;
+        
         setPokemon(data);
       })
       .catch(function (error) {
+        
         setPokemon(false);
       });
-  }, [pokemonId]);
+  }, [pokemon]);
   console.log("pokemon renders")
   console.log(pokemon)
 
@@ -31,9 +34,11 @@ const Pokemon = (props) => {
       {pokemon === false && <Typography> Pokemon not found</Typography>}
 
       {pokemon !== undefined && (
-        <Button variant="contained" onClick={() => history.push("/")}>
-          back to pokedex
+       <div style={{ display: "flex", flexDirection:"column", alignSelf: "center"}}>
+       <Button variant="contained" onClick={() => history.push("/")} style={{ display: "flex", flexDirection:"column", alignSelf: "center"}}>
+          Back to Pokedex
         </Button>
+        </div>
       )}
     </>
   );
