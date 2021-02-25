@@ -34,7 +34,7 @@ const history= useHistory()
       {pokemon === false && <Typography> Pokemon not found</Typography>}
 
       {pokemon !== undefined && (
-       <div style={{ display: "flex", flexDirection:"column", alignSelf: "center"}}>
+       <div style={{ display: "flex", flexDirection:"column", alignSelf: "center", paddingTop:"35px"}}>
        <Button variant="contained" onClick={() => history.push("/")} style={{ display: "flex", flexDirection:"column", alignSelf: "center"}}>
           Back to Pokedex
         </Button>

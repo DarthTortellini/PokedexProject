@@ -1,6 +1,21 @@
 import { Typography, Link, } from "@material-ui/core";
 import { toFirstCharUppercase } from "../constants";
 import { fade, makeStyles } from "@material-ui/core/styles";
+import {
+  
+  Card,
+  CardMedia,
+  CardContent,
+  Grid,
+  
+  CircularProgress,
+  Toolbar,
+  AppBar,
+  TextField,
+  BottomNavigation,
+} from "@material-ui/core";
+
+
 
 
 
@@ -11,8 +26,11 @@ const generatePokemonJSX = (pokemon) => {
   const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
   const { front_default } = fullImageUrl
   return (
-    <>
-  <div style= {{display:"flex", flexDirection: "column",justifyContent:"center", textAlign:"center", borderWidth:"5px",}}>
+    < >
+  <div style= {{display:"flex", flexDirection: "column",justifyContent:"center", textAlign:"center", borderWidth:"5px",  }} boxShadow={5}>
+     <Grid style={{paddingLeft:"200px", paddingRight:"200px", paddingTop:"60px"}} >
+     <Card style={{paddingLeft:"200px", paddingRight:"200px", }} >
+       <CardContent style={{margin:"auto" ,display:"flex", flexDirection:"column"}} >
       <Typography variant="h1">
         {`${id}.`} {toFirstCharUppercase(name)}
         <img src={front_default} />
@@ -23,18 +41,21 @@ const generatePokemonJSX = (pokemon) => {
       <Typography variant="h3">Pokemon Info</Typography>
       <hr/>
       <Typography>
-        {"Species: "}
-        <Link href={species.url}>{species.name} </Link>
+        <strong>{"Species: "}</strong>
+        <Link href={species.url}>{toFirstCharUppercase(species.name)} </Link>
       </Typography>
-      <Typography>Height: {height} </Typography>
-      <Typography>Weight: {weight} </Typography>
+      <Typography><strong>Height:</strong> {height/10} m</Typography>
+      <Typography><strong>Weight:</strong> {weight} lb</Typography>
 
-      <Typography variant="h6"> Types:</Typography>
+      <Typography variant="h6"> <strong>Types:</strong></Typography>
       {types.map((typeInfo) => {
         const { type } = typeInfo;
         const { name } = type;
-        return <Typography key={name}> {`${name}`}</Typography>;
+        return <Typography key={name}> {`${toFirstCharUppercase(name)}`}</Typography>;
       })}
+      </CardContent>
+      </Card>
+      </Grid>
       </div>
     </>
   );

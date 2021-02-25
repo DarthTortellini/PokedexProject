@@ -19,6 +19,8 @@ import axios from "axios";
 import { Gradient } from "@material-ui/icons";
 import { red } from "@material-ui/core/colors";
 import { createMuiTheme } from '@material-ui/core/styles';
+import generatePokemonJSX from "./components/GeneratePokemon"
+
 
 const theme = createMuiTheme({
     palette: {
@@ -43,14 +45,17 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: "50px",
         paddingRight: "50px",
         backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
+        
     },
     cardMedia: {
         margin: "auto",
         backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
+        
 
     },
     cardContent: {
         textAlign: "center",
+        
         
 
     },
@@ -62,6 +67,8 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: "20px",
         marginTop: "10px",
         marginBottom: "0px",
+        
+
         
 
     },
@@ -186,10 +193,10 @@ const Pokedex = (props) => {
                             </h3>
                         </Typography>
                         <hr />
-                        <Typography>{` Weight: ${weight}`}</Typography>
-                        <Typography>{` Height: ${height}`}</Typography>
-                        <Typography> {`Type: ${type.join(", ")}`}</Typography>
-                        <Typography> {`Weaknesses: ${weaknesses.join(", ")}`}</Typography>
+                        <Typography> <strong>Weight:</strong> {weight}</Typography>
+                        <Typography> <strong>Height:</strong> {height}</Typography>
+                        <Typography> <strong>Type: </strong>{type.join(", ")}</Typography>
+                        <Typography><strong> Weaknesses:</strong> {weaknesses.join(", ")}</Typography>
 
                     </CardContent>
                 </Card>
