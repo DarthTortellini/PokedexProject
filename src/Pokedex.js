@@ -45,18 +45,18 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: "50px",
         paddingRight: "50px",
         backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
-        
+
     },
     cardMedia: {
         margin: "auto",
         backgroundImage: "url(https://wallpapercave.com/wp/foVCgr1.jpg)",
-        
+
 
     },
     cardContent: {
         textAlign: "center",
-        
-        
+
+
 
     },
     searchContainer: {
@@ -67,9 +67,9 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: "20px",
         marginTop: "10px",
         marginBottom: "0px",
-        
 
-        
+
+
 
     },
     searchIcon: {
@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Pokedex = (props) => {
     const classes = useStyles();
-    const  history  = useHistory();
+    const history = useHistory();
     const [pokemonData, setPokemonData] = useState([]);
     const [filterList, setFilterList] = useState([]);
 
@@ -177,7 +177,7 @@ const Pokedex = (props) => {
 
     const getPokemonCard = (pokemonId) => {
         const { id, name, img, weight, height, weaknesses, type } = pokemonId;
-        
+
         return (
             <Grid item xs={4} key={id}>
                 <Card onClick={() => history.push(`/${id}`)}>
@@ -212,7 +212,7 @@ const Pokedex = (props) => {
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
                     <img src="https://th.bing.com/th/id/R92376cd31daa2b778d0c8c972f4ff15e?rik=UGxgQCA6trucPw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fPikachu-Transparent-Background.png&ehk=IkODZDFKK69kkQUJ%2bHeTffq3HSV9Tw5xMlQ2skmbaek%3d&risl=&pid=ImgRaw" height="75px" width="75px"></img>
-                   
+
                     <Toolbar className={classes.Toolbar}>
                         <div className={classes.searchContainer}>
                             <SearchIcon className={classes.searchIcon} />
@@ -253,7 +253,7 @@ const Pokedex = (props) => {
                     <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
 
                 </div>
-<hr/>
+                <hr />
             </AppBar>
 
             {pokemonData ? (
