@@ -179,102 +179,145 @@ const Pokedex = (props) => {
         const { id, name, img, weight, height, weaknesses, type } = pokemonId;
 
         return (
-            <Grid item xs={4} key={id}>
-                <Card onClick={() => history.push(`/${id}`)}>
-                    <CardMedia
-                        className={classes.cardMedia}
-                        image={img}
-                        style={{ width: "130px", height: "130px" }}
-                    />
-                    <CardContent className={classes.cardContent}>
-                        <Typography>
-                            <h3>
-                                {`${id}. ${toFirstCharUppercase(name)}`}
-                            </h3>
-                        </Typography>
-                        <hr />
-                        <Typography> <strong>Weight:</strong> {weight}</Typography>
-                        <Typography> <strong>Height:</strong> {height}</Typography>
-                        <Typography> <strong>Type: </strong>{type.join(", ")}</Typography>
-                        <Typography><strong> Weaknesses:</strong> {weaknesses.join(", ")}</Typography>
 
-                    </CardContent>
-                </Card>
-            </Grid>
+            <
+            Grid item xs = { 4 }
+            key = { id } > < /Grid> <
+            Card onClick = {
+                () => history.push(`/${id}`)
+            } >
+            <
+            CardMedia className = { classes.cardMedia }
+            image = { img }
+            style = {
+                { width: "130px", height: "130px" }
+            }
+            /> <
+            CardContent className = { classes.cardContent } >
+            <
+            Typography >
+            <
+            h3 > { `${id}. ${toFirstCharUppercase(name)}` } <
+            /h3> < /
+            Typography > <
+            hr / >
+            <
+            Typography > < strong > Weight: < /strong> {weight}</Typography >
+            <
+            Typography > < strong > Height: < /strong> {height}</Typography >
+            <
+            Typography > < strong > Type: < /strong>{type.join(", ")}</Typography >
+            <
+            Typography > < strong > Weaknesses: < /strong> {weaknesses.join(", ")}</Typography >
+
+            <
+            /CardContent> < /
+            Card > <
+            /Grid>
         );
     };
 
-    return (
-        <>
-            <AppBar position="static">
-                <div className={classes.Toolbar}>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px" ></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-                    <img src="https://th.bing.com/th/id/R92376cd31daa2b778d0c8c972f4ff15e?rik=UGxgQCA6trucPw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fPikachu-Transparent-Background.png&ehk=IkODZDFKK69kkQUJ%2bHeTffq3HSV9Tw5xMlQ2skmbaek%3d&risl=&pid=ImgRaw" height="75px" width="75px"></img>
+    return ( <
+        >
+        <
+        AppBar position = "static" >
+        <
+        div className = { classes.Toolbar } >
+        <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://th.bing.com/th/id/R92376cd31daa2b778d0c8c972f4ff15e?rik=UGxgQCA6trucPw&riu=http%3a%2f%2fwww.pngmart.com%2ffiles%2f2%2fPikachu-Transparent-Background.png&ehk=IkODZDFKK69kkQUJ%2bHeTffq3HSV9Tw5xMlQ2skmbaek%3d&risl=&pid=ImgRaw"
+        height = "75px"
+        width = "75px" > < /img>
 
-                    <Toolbar className={classes.Toolbar}>
-                        <div className={classes.searchContainer}>
-                            <SearchIcon className={classes.searchIcon} />
-                            <TextField
-                                className={classes.searchInput}
-                                onChange={handleSearchChange}
-                                label="Pokemon"
-                                variant="standard"
-                                id="pokeName"
-                            />
-                        </div>
-                        <div className={classes.searchContainer}>
-                            <SearchIcon className={classes.searchIcon} />
-                            <TextField
-                                className={classes.searchInput}
-                                onChange={handleSearchChange}
-                                label="Type"
-                                variant="standard"
-                                id="pokeType"
-                            />
-                        </div>
-                        <div className={classes.searchContainer}>
-                            <SearchIcon className={classes.searchIcon} />
-                            <TextField
-                                className={classes.searchInput}
-                                onChange={handleSearchChange}
-                                label="Weaknesses"
-                                variant="standard"
-                                id="pokeWeaknesses"
-                            />
+        <
+        Toolbar className = { classes.Toolbar } >
+        <
+        div className = { classes.searchContainer } >
+        <
+        SearchIcon className = { classes.searchIcon }
+        /> <
+        TextField className = { classes.searchInput }
+        onChange = { handleSearchChange }
+        label = "Pokemon"
+        variant = "standard"
+        id = "pokeName" /
+        >
+        <
+        /div> <
+        div className = { classes.searchContainer } >
+        <
+        SearchIcon className = { classes.searchIcon }
+        /> <
+        TextField className = { classes.searchInput }
+        onChange = { handleSearchChange }
+        label = "Type"
+        variant = "standard"
+        id = "pokeType" /
+        >
+        <
+        /div> <
+        div className = { classes.searchContainer } >
+        <
+        SearchIcon className = { classes.searchIcon }
+        /> <
+        TextField className = { classes.searchInput }
+        onChange = { handleSearchChange }
+        label = "Weaknesses"
+        variant = "standard"
+        id = "pokeWeaknesses" /
+        >
 
-                        </div>
+        <
+        /div>
 
-                    </Toolbar>
-                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f484215b-4e9a-42b5-9feb-77c3dec3a385/dala92b-9ecf2fc6-d8aa-4c90-b728-ef6509eebd90.png" height="75px" width="75px"></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
-                    <img src="https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png" height="75px" width="75px"></img>
+        <
+        /Toolbar> <
+        img src = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/f484215b-4e9a-42b5-9feb-77c3dec3a385/dala92b-9ecf2fc6-d8aa-4c90-b728-ef6509eebd90.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img> <
+        img src = "https://purepng.com/public/uploads/medium/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617dhmi.png"
+        height = "75px"
+        width = "75px" > < /img>
 
-                </div>
-                <hr />
-            </AppBar>
+        <
+        /div> <
+        hr / >
+        <
+        /AppBar>
 
-            {pokemonData ? (
-                <Grid container spacing={2} className={classes.pokedexContainer}>
-                    {filterList.map(
+        {
+            pokemonData ? ( <
+                Grid container spacing = { 2 }
+                className = { classes.pokedexContainer } > {
+                    filterList.map(
                         (pokemonId) =>
 
-                            getPokemonCard(pokemonId)
-                    )}
+                        getPokemonCard(pokemonId)
+                    )
+                }
 
-                </Grid>
-            ) : (
-                    <CircularProgress />
-                )}
-        </>
+                <
+                /Grid>
+            ) : ( <
+                CircularProgress / >
+            )
+        } <
+        />
     );
 };
 
 export default Pokedex;
-
-
-
-
-
